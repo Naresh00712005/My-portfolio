@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Naresh Kumar Arumugam — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#05060a;
+  --card:rgba(255,255,255,0.03);
+  --text:#eaf2ff;
+  --muted:#b9c6d8;
+  --r:#ff3c6a; /* red */
+  --b:#5d8aff; /* blue */
+  --p:#a94dff; /* purple */
+  --white:#ffffff;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+  color:var(--text);
+  background:
+    radial-gradient(1200px 600px at 10% 10%, rgba(169,77,255,0.08), transparent 10%),
+    radial-gradient(800px 400px at 90% 80%, rgba(93,138,255,0.06), transparent 10%),
+    linear-gradient(180deg,#06060b 0%, #0b0812 100%);
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:1100px;margin:0 auto;padding:24px}
+nav{position:sticky;top:0;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));backdrop-filter:blur(6px);padding:12px 0;z-index:50}
+nav .container{display:flex;align-items:center;gap:12px}
+.logo{font-weight:700;color:var(--white)}
+.nav-links{margin-left:auto;display:flex;gap:12px;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;padding:6px 10px;border-radius:8px}
+.nav-links a:hover{color:var(--white);background:var(--card)}
+
+/* HERO */
+.hero{padding:72px 0;display:grid;grid-template-columns:1fr 360px;gap:36px;align-items:center}
+h1{font-size:2.4rem;margin:0}
+.tagline{color:var(--muted);margin-top:10px;font-size:1rem}
+.role-badges{display:flex;gap:8px;margin-top:14px}
+.badge{background:linear-gradient(90deg,var(--r),var(--b));padding:8px 12px;border-radius:999px;color:#041018;font-weight:600;font-size:0.95rem;box-shadow:0 6px 18px rgba(93,138,255,0.06)}
+.photo-frame{width:320px;height:320px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 10px 30px rgba(0,0,0,0.6)}
+.photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* SECTIONS */
+.section{padding:56px 0;border-top:1px solid rgba(255,255,255,0.02)}
+h2{margin:0 0 14px 0;font-size:1.6rem}
+.about p{color:var(--muted);max-width:920px;line-height:1.7}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:16px}
+.skill{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;text-align:center;color:var(--white)}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:14px}
+.card{background:var(--card);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+.card .thumb{height:140px;border-radius:8px;background:linear-gradient(120deg,var(--p),var(--b));display:flex;align-items:center;justify-content:center;color:#001217;font-weight:700}
+.card h3{margin:10px 0 6px 0}
+.card p{color:var(--muted);font-size:0.95rem}
+.actions{display:flex;gap:8px;margin-top:10px}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--r),var(--b));color:#071018;font-weight:700;text-decoration:none}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--white)}
+
+/* CONTACT */
+.contact-list{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+.contact-item{display:flex;gap:10px;align-items:center;color:var(--muted)}
+.contact-item a{color:var(--muted);text-decoration:none}
+.contact-item a:hover{color:var(--white)}
+
+/* FOOTER */
+.footer-block{margin-top:28px;padding:14px;border-radius:10px;background:linear-gradient(90deg, rgba(169,77,255,0.06), rgba(93,138,255,0.03));text-align:center;color:var(--muted)}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(8px);animation:fadeIn 0.8s forwards}
+@keyframes fadeIn{to{opacity:1;transform:none}}
+.pulse{animation:pulse 3s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(169,77,255,0.06)}50%{box-shadow:0 0 40px 6px rgba(93,138,255,0.02)}100%{box-shadow:0 0 0 0 rgba(169,77,255,0.00)}}
+
+/* responsive */
+@media(max-width:880px){.hero{grid-template-columns:1fr;gap:18px}.photo-frame{width:220px;height:220px;margin:0 auto}nav .container{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">Naresh Kumar</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <!-- HERO -->
+  <section id="home" class="hero container">
+    <div>
+      <h1 class="fade-in">Hi, I'm <span style="color:var(--p)">Naresh Kumar</span></h1>
+
+      <div class="role-badges fade-in" style="animation-delay:0.12s">
+        <div class="badge">Digital Marketer</div>
+        <div class="badge">Business Dev. Analyst</div>
+        <div class="badge">IT Supporter</div>
+      </div>
+
+      <p class="tagline fade-in" style="animation-delay:0.22s">Turning ideas into impact — marketing, strategy & support, done simply.</p>
+
+      <div style="margin-top:18px" class="fade-in" style="animation-delay:0.32s">
+        <a class="btn" href="https://drive.google.com/file/d/18BwcP4ZIlAIvhhu8hnASYOgULTNHe-36/view?usp=drive_link" target="_blank" rel="noopener">View Resume</a>
+        <a class="btn ghost" href="#projects" style="margin-left:10px">See Projects</a>
+      </div>
+    </div>
+
+    <!-- Photo: replace src with your file name (profile.png) or a base64 data URL -->
+    <div class="photo-frame pulse fade-in" style="animation-delay:0.4s">
+      <img src="profile.png" alt="Naresh Photo">
+      <!-- If you want to embed base64 instead of profile.png, replace src with data:image/png;base64,...... -->
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section container about">
+    <h2 class="fade-in">About Me</h2>
+    <p class="fade-in" style="animation-delay:0.12s">
+      I’m Naresh Kumar, a final-year IT student passionate about blending technology, digital marketing, and business strategy. I have hands-on experience in Technical Support, SEO, and Social Media Marketing, gained through internships at Swift Power Pvt. Ltd. and Leo Nexley.<br><br>
+      My strength lies in understanding people, communicating clearly, and building strong relationships. As a six-year Hockey Team Captain, I learned leadership, teamwork, and the discipline needed to achieve goals under pressure.<br><br>
+      I enjoy exploring new ideas, learning fast, and bringing structure to any project I work on. Whether it’s content writing, digital strategy, or analytical problem-solving, I aim to deliver clean, meaningful, and value-driven results.
+    </p>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section container">
+    <h2 class="fade-in">Skills</h2>
+    <div class="skills-grid fade-in" style="animation-delay:0.12s">
+      <div class="skill">Digital Marketing</div>
+      <div class="skill">SEO</div>
+      <div class="skill">SMM</div>
+      <div class="skill">Content Writing & Analysis</div>
+      <div class="skill">Graphics (Canva)</div>
+      <div class="skill">Programming — Python (Basics)</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section container">
+    <h2 class="fade-in">Projects</h2>
+    <div class="projects-grid fade-in" style="animation-delay:0.12s">
+
+      <div class="card">
+        <div class="thumb">Emotion-Based Music Recommendation</div>
+        <h3>Emotion-Based Music Recommendation</h3>
+        <p>Web app that captures webcam input, detects user emotion, and recommends mood-matched songs in real time. Implemented complete workflow from face capture to playlist mapping and testing.</p>
+        <div class="actions"><a class="btn ghost" href="#" target="_blank">View</a></div>
+      </div>
+
+      <div class="card">
+        <div class="thumb">HR Analytics — Attrition</div>
+        <h3>HR Analytics — Employee Attrition Prediction</h3>
+        <p>Final-year project using Random Forest to predict employee attrition and an interactive HR dashboard to visualise drivers and trends for proactive retention strategies.</p>
+        <div class="actions"><a class="btn ghost" href="#" target="_blank">View</a></div>
+      </div>
+
+      <div class="card">
+        <div class="thumb">SEO & SMM Campaigns</div>
+        <h3>Digital Marketing — SEO & SMM Campaigns</h3>
+        <p>Managed SEO and social media campaigns to improve online engagement and lead generation. Created content, A/B tested creatives, and analysed performance to reduce CPL and increase CTR.</p>
+        <div class="actions"><a class="btn ghost" href="#" target="_blank">View</a></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section container">
+    <h2 class="fade-in">Contact</h2>
+
+    <div class="contact-list fade-in" style="animation-delay:0.12s">
+      <div class="contact-item">
+        <!-- phone icon -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex:0 0 18px;margin-right:8px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2.08 4.18 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.72c.12 1.07.36 2.11.7 3.09a2 2 0 0 1-.45 2.11L8.09 10.91a16 16 0 0 0 6 6l1.99-1.15a2 2 0 0 1 2.11-.45c.98.34 2.02.58 3.09.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a href="tel:7200477125">+91 7200477125</a>
+      </div>
+
+      <div class="contact-item">
+        <!-- mail icon -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex:0 0 18px;margin-right:8px"><path d="M4 4h16v16H4z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a href="mailto:naresharumugam9941@gmail.com">naresharumugam9941@gmail.com</a>
+      </div>
+
+      <div class="contact-item">
+        <!-- linkedin icon -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex:0 0 18px;margin-right:8px"><path d="M16 8a6 6 0 0 1 6 6v6h-4v-6a2 2 0 0 0-2-2 2 2 0 0 0-2 2v6h-4v-12h4v2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a href="https://www.linkedin.com/in/naresharumugam" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+
+      <div class="contact-item">
+        <!-- instagram icon -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex:0 0 18px;margin-right:8px"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.4"/><path d="M16 11.37A4 4 0 1 1 12.63 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M17.5 6.5h.01" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a href="https://www.instagram.com/naresh_argm/?__pwa=1" target="_blank" rel="noopener">Instagram</a>
+      </div>
+
+      <div class="contact-item">
+        <!-- X / Twitter icon -->
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="flex:0 0 18px;margin-right:8px"><path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <a href="https://x.com/Naresh_argm" target="_blank" rel="noopener">X / Twitter</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER LABEL -->
+  <div class="container">
+    <div class="footer-block">© Naresh Kumar Arumugam</div>
+  </div>
+
+</main>
+
+<script>
+// smooth scroll for internal links
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click', e=>{
+  const target = document.querySelector(a.getAttribute('href'));
+  if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+}));
+
+// simple fade-in triggers on load (adds slight delay)
+document.addEventListener('DOMContentLoaded', ()=> {
+  document.querySelectorAll('.fade-in').forEach((el,i)=>{ el.style.animationDelay = (i*0.08)+'s'; el.classList.add('fade-in'); });
+});
+</script>
+
+</body>
+</html>
